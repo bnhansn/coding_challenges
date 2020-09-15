@@ -1,24 +1,27 @@
 # Instructions
 #
 # Implement the reverse/1, map/2, and uniq_by/2 functions from the Enum module
-# with using any functions from the Enum module. The functions should support
-# both Lists and Maps.
+# without using any functions from the Enum module. The functions should work
+# for both Lists and Maps.
 #
-# A test suite has been provided, it can be run with MyEnumTests.run().
+# A test suite is provided, it can be run by calling MyEnumTests.run().
 
 defmodule MyEnum do
   @spec reverse(Enum.t()) :: list()
   def reverse(enumerable) do
+    # TODO fix this function to reverse the enumerable
     enumerable
   end
 
   @spec map(Enum.t(), (any() -> any())) :: list()
-  def map(enumerable, _fun) do
+  def map(enumerable, fun) do
+    # TODO fix this function to map over the enumerable, applying the `fun`
+    # function on each element
     enumerable
   end
 
   @spec uniq_by(Enum.t(), (any() -> any())) :: list()
-  def uniq_by(enumerable, _fun) do
+  def uniq_by(enumerable, fun) do
     enumerable
   end
 end

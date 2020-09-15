@@ -25,12 +25,8 @@ defmodule MyEnum do
     enumerable |> Map.to_list() |> map(fun)
   end
 
-  defp do_map(_enumerable, _fun, acc \\ [])
-
-  defp do_map([], _fun, acc), do: reverse(acc)
-
-  defp do_map([head | tail], fun, acc) do
-    do_map(tail, fun, [fun.(head) | acc])
+  defp do_map(enumerable, fun) do
+    for e <- enumerable, do: fun.(e)
   end
 
   @spec uniq_by(Enum.t(), (any() -> any())) :: list()
